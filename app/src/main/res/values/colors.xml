@@ -5,5 +5,7 @@
     <color name="colorAccent">#0000ff</color>
     <color name="black">#000000</color>
     <color name="azul_poupanca">#2397F3</color>
+    <color name="verde_placa">#4CAF50</color>
+    <color name="cinza_placa">#BBBEBB</color>
 
 </resources>

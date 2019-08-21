@@ -9,12 +9,77 @@
 
     <Button
         android:id="@+id/button7"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="MENU"
         android:onClick="btnVoltaMain2"
-        android:layout_gravity="center"
-        tools:layout_editor_absoluteX="161dp"
-        tools:layout_editor_absoluteY="341dp" />
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:id="@+id/textQuestao"
+        android:layout_width="wrap_content"
+        android:text="Questão 11 de 28"
+        android:layout_height="wrap_content"/>
+
+    <ImageButton
+        android:id="@+id/imageQuiz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/quiz_transito_banner" />
+
+    <ImageButton
+        android:id="@+id/imagePlaca"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/placa"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:id="@+id/textSignficadoPlaca"
+        android:layout_width="wrap_content"
+        android:text="Q11 - Qual o significado desta placa?"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/btnPonte"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/verde_placa"
+        android:text="Ponte a Frente"
+        android:layout_margin="10dp"/>
+
+    <Button
+        android:id="@+id/btnEstreitamento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/verde_placa"
+        android:text="Esreitamento de pista"
+        android:layout_margin="10dp"/>
+
+    <Button
+        android:id="@+id/btnDeclive"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/verde_placa"
+        android:text="Declive de pista"
+        android:layout_margin="10dp"/>
+
+    <Button
+        android:id="@+id/btnReducao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/verde_placa"
+        android:text="Redução de largura de veículos"
+        android:layout_margin="10dp"/>
+
+    <Button
+        android:id="@+id/btnProximaPergunta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/cinza_placa"
+        android:text="Próxima pergunta"
+        android:layout_margin="10dp"/>
+
+
 
 </LinearLayout>
