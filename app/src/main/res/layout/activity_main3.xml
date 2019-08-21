@@ -16,4 +16,25 @@
         android:layout_gravity="center"
         tools:layout_editor_absoluteX="150dp"
         tools:layout_editor_absoluteY="266dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/poupanca_logo" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:text="Valor Inicial"
+        android:layout_height="wrap_content"
+         />
+    <EditText
+        android:id="@+id/txtTempC"
+        android:layout_width="match_parent"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        android:hint="Valor em R$. Ex: 1700.00"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>
