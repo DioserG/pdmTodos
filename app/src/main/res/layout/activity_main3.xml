@@ -36,5 +36,32 @@
         android:textSize="28sp"
         android:hint="Valor em R$. Ex: 1700.00"
         android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/textViewMensal"
+        android:layout_width="match_parent"
+        android:text="Aplicação Mensal"
+        android:layout_height="wrap_content"
+        />
+    <EditText
+        android:id="@+id/txtMensal"
+        android:layout_width="match_parent"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        android:hint="Ex:100,00 "
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/textViewTempoAplicacao"
+        android:layout_width="match_parent"
+        android:text="Tempo de Aplicação"
+        android:layout_height="wrap_content"
+        />
+    <EditText
+        android:id="@+id/txtTemp"
+        android:layout_width="match_parent"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        android:hint="Em Meses"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
