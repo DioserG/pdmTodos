@@ -7,5 +7,7 @@
     <color name="azul_poupanca">#2397F3</color>
     <color name="verde_placa">#4CAF50</color>
     <color name="cinza_placa">#BBBEBB</color>
+    <color name="orange_balaio">#FF5B03</color>
+    <color name="white_balaio">#ffffff</color>
 
 </resources>
