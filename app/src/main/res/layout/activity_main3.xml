@@ -15,67 +15,73 @@
         android:onClick="btnVoltaMain2"
         android:layout_gravity="center"
         tools:layout_editor_absoluteX="150dp"
-        tools:layout_editor_absoluteY="266dp" />
+        tools:layout_editor_absoluteY="266dp"/>
 
     <ImageButton
         android:id="@+id/imageButton2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/poupanca_logo" />
+        app:srcCompat="@drawable/poupanca_logo"/>
 
     <TextView
         android:id="@+id/textValorInicial"
-        android:layout_width="wrap_content"
-        android:text="@string/textValorInicial"
+        android:layout_width="87dp"
         android:layout_height="wrap_content"
-         />
+        android:text="@string/textValorInicial"
+        android:textAlignment="center" />
+
     <EditText
         android:id="@+id/txtValorInicial"
         android:layout_width="wrap_content"
-        android:textColor="@color/black"
-        android:textSize="28sp"
+        android:layout_height="wrap_content"
         android:hint="@string/txtValorInicial"
-        android:layout_height="wrap_content" />
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="28sp" />
+
     <TextView
         android:id="@+id/textViewMensal"
-        android:layout_width="wrap_content"
-        android:text="@string/textViewMensal"
+        android:layout_width="123dp"
         android:layout_height="wrap_content"
-        />
+        android:text="@string/textViewMensal"
+        android:textAlignment="center" />
     <EditText
         android:id="@+id/txtMensal"
         android:layout_width="wrap_content"
         android:textColor="@color/black"
         android:textSize="28sp"
+        android:textAlignment="center"
         android:hint="@string/txtMensal"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"/>
 
     <TextView
         android:id="@+id/textViewTempoAplicacao"
-        android:layout_width="wrap_content"
-        android:text="@string/textViewTempoAplicacao"
+        android:layout_width="144dp"
         android:layout_height="wrap_content"
-        />
+        android:text="@string/textViewTempoAplicacao"
+        android:textAlignment="center" />
     <EditText
         android:id="@+id/txtTempoAplicacao"
         android:layout_width="wrap_content"
         android:textColor="@color/black"
         android:textSize="28sp"
         android:hint="@string/txtTempoAplicacao"
+        android:textAlignment="center"
         android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/textViewTaxa"
-        android:layout_width="wrap_content"
-        android:text="@string/textViewTaxa"
+        android:layout_width="42dp"
         android:layout_height="wrap_content"
-        />
+        android:text="@string/textViewTaxa"
+        android:textAlignment="center" />
     <EditText
         android:id="@+id/txtTaxa"
         android:layout_width="wrap_content"
         android:textColor="@color/black"
         android:textSize="28sp"
         android:hint="@string/txtTaxa"
+        android:textAlignment="center"
         android:layout_height="wrap_content" />
 
     <Button
