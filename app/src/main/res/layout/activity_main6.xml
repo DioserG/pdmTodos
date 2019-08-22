@@ -32,6 +32,28 @@
             android:textAlignment="center"/>
 
         <EditText
+            android:id="@+id/txtConsumo"
+            android:layout_width="187dp"
+            android:background="@color/white_balaio"
+            android:inputType="numberDecimal"
+            android:textColor="@color/black"
+            android:textSize="28sp" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/textCouvert"
+            android:layout_width="184dp"
+            android:layout_height="48dp"
+            android:text="Couvert artístico R$:  "
+            android:textAlignment="center"/>
+
+        <EditText
             android:id="@+id/txtCouvert"
             android:layout_width="187dp"
             android:background="@color/white_balaio"
@@ -39,5 +61,109 @@
             android:textColor="@color/black"
             android:textSize="28sp" />
     </TableRow>
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/textConta"
+            android:layout_width="184dp"
+            android:layout_height="48dp"
+            android:text="Dividir conta por  "
+            android:textAlignment="center"/>
+
+        <EditText
+            android:id="@+id/txtConta"
+            android:layout_width="187dp"
+            android:background="@color/white_balaio"
+            android:inputType="numberDecimal"
+            android:textColor="@color/black"
+            android:textSize="28sp" />
+    </TableRow>
+
+    <Button
+        android:id="@+id/btnContaFinal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@color/cinza_placa"
+        android:text="Calcular conta final" />
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/texTaxaServico"
+            android:layout_width="184dp"
+            android:layout_height="48dp"
+            android:text="Taxa de Serviço(10%) R$  "
+            android:textAlignment="center"/>
+
+        <EditText
+            android:id="@+id/txtTaxaServico"
+            android:layout_width="187dp"
+            android:background="@color/white_balaio"
+            android:inputType="numberDecimal"
+            android:textColor="@color/black"
+            android:textSize="28sp" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+    <TextView
+        android:id="@+id/texContaTotal"
+        android:layout_width="184dp"
+        android:layout_height="48dp"
+        android:text="Conta Total R$: "
+        android:textAlignment="center"/>
+
+    <EditText
+        android:id="@+id/txtContaTotal"
+        android:layout_width="187dp"
+        android:background="@color/white_balaio"
+        android:inputType="numberDecimal"
+        android:textColor="@color/black"
+        android:textSize="28sp" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/texValorPessoa"
+            android:layout_width="184dp"
+            android:layout_height="48dp"
+            android:text="Valor por pessoa R$: "
+            android:textAlignment="center"/>
+
+        <EditText
+            android:id="@+id/txtValorPessoa"
+            android:layout_width="187dp"
+            android:background="@color/white_balaio"
+            android:inputType="numberDecimal"
+            android:textColor="@color/black"
+            android:textSize="28sp" />
+    </TableRow>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="175dp"
+        android:baselineAlignBottom="true"
+        app:srcCompat="@drawable/logo_balaio" />
+
 
 </LinearLayout>
