@@ -25,7 +25,7 @@
 
     <TextView
         android:id="@+id/textValorInicial"
-        android:layout_width="87dp"
+        android:layout_width="84dp"
         android:layout_height="wrap_content"
         android:text="@string/textValorInicial"
         android:textAlignment="center" />
@@ -41,7 +41,7 @@
 
     <TextView
         android:id="@+id/textViewMensal"
-        android:layout_width="123dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/textViewMensal"
         android:textAlignment="center" />
@@ -56,7 +56,7 @@
 
     <TextView
         android:id="@+id/textViewTempoAplicacao"
-        android:layout_width="144dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/textViewTempoAplicacao"
         android:textAlignment="center" />
@@ -71,7 +71,7 @@
 
     <TextView
         android:id="@+id/textViewTaxa"
-        android:layout_width="42dp"
+        android:layout_width="40dp"
         android:layout_height="wrap_content"
         android:text="@string/textViewTaxa"
         android:textAlignment="center" />
