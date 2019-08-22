@@ -17,7 +17,7 @@ public class Main6Activity extends AppCompatActivity {
         getSupportActionBar().setDisplayUseLogoEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setBackgroundDrawable(
-                new ColorDrawable(Color.parseColor("#BBBEBB")));
+                new ColorDrawable(Color.parseColor("#777070")));
     }
 
     public void btnVoltaMain2(View view) {

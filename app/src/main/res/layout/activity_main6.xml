@@ -29,6 +29,7 @@
             android:layout_width="184dp"
             android:layout_height="48dp"
             android:text="Consumo total R$: "
+            android:textSize="18sp"
             android:textAlignment="center"/>
 
         <EditText
@@ -51,6 +52,7 @@
             android:layout_width="184dp"
             android:layout_height="48dp"
             android:text="Couvert artístico R$:  "
+            android:textSize="18sp"
             android:textAlignment="center"/>
 
         <EditText
@@ -73,6 +75,7 @@
             android:layout_width="184dp"
             android:layout_height="48dp"
             android:text="Dividir conta por  "
+            android:textSize="18sp"
             android:textAlignment="center"/>
 
         <EditText
@@ -102,8 +105,9 @@
             android:id="@+id/texTaxaServico"
             android:layout_width="184dp"
             android:layout_height="48dp"
-            android:text="Taxa de Serviço(10%) R$  "
-            android:textAlignment="center"/>
+            android:text="Taxa de Serviço(10%) R$"
+            android:textSize="16sp"
+            android:textAlignment="center" />
 
         <EditText
             android:id="@+id/txtTaxaServico"
@@ -125,6 +129,7 @@
         android:layout_width="184dp"
         android:layout_height="48dp"
         android:text="Conta Total R$: "
+        android:textSize="18sp"
         android:textAlignment="center"/>
 
     <EditText
@@ -147,6 +152,7 @@
             android:layout_width="184dp"
             android:layout_height="48dp"
             android:text="Valor por pessoa R$: "
+            android:textSize="17sp"
             android:textAlignment="center"/>
 
         <EditText
@@ -164,6 +170,5 @@
         android:layout_height="175dp"
         android:baselineAlignBottom="true"
         app:srcCompat="@drawable/logo_balaio" />
-
 
 </LinearLayout>
