@@ -1,9 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">pdmAula3</string>
     <string name="txtValorInicial">Valor em R$ 1700,00</string>
     <string name="textValorInicial">Valor Inicial</string>
     <string name="textViewMensal">Aplicação Mensal</string>
-    <string name="txtMensal">Ex: 100,00</string>
+    <string name="txtMensal">Ex:100,00</string>
     <string name="textViewTempoAplicacao">Tempo de Aplicação</string>
     <string name="txtTempoAplicacao">Em meses</string>
     <string name="textViewTaxa">Taxa</string>

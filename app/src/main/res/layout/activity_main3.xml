@@ -26,7 +26,7 @@
     <TextView
         android:id="@+id/textValorInicial"
         android:layout_width="wrap_content"
-        android:text="Valor Inicial"
+        android:text="@string/textValorInicial"
         android:layout_height="wrap_content"
          />
     <EditText
@@ -34,12 +34,12 @@
         android:layout_width="wrap_content"
         android:textColor="@color/black"
         android:textSize="28sp"
-        android:hint="Valor em R$. Ex: 1700.00"
+        android:hint="@string/txtValorInicial"
         android:layout_height="wrap_content" />
     <TextView
         android:id="@+id/textViewMensal"
         android:layout_width="wrap_content"
-        android:text="Aplicação Mensal"
+        android:text="@string/textViewMensal"
         android:layout_height="wrap_content"
         />
     <EditText
@@ -47,13 +47,13 @@
         android:layout_width="wrap_content"
         android:textColor="@color/black"
         android:textSize="28sp"
-        android:hint="Ex:100,00 "
+        android:hint="@string/txtMensal"
         android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/textViewTempoAplicacao"
         android:layout_width="wrap_content"
-        android:text="Tempo de Aplicação"
+        android:text="@string/textViewTempoAplicacao"
         android:layout_height="wrap_content"
         />
     <EditText
@@ -61,13 +61,13 @@
         android:layout_width="wrap_content"
         android:textColor="@color/black"
         android:textSize="28sp"
-        android:hint="Em Meses"
+        android:hint="@string/txtTempoAplicacao"
         android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/textViewTaxa"
         android:layout_width="wrap_content"
-        android:text="Taxa"
+        android:text="@string/textViewTaxa"
         android:layout_height="wrap_content"
         />
     <EditText
@@ -79,10 +79,10 @@
         android:layout_height="wrap_content" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/btnCalcular"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/azul_poupanca"
-        android:text="Calcular" />
+        android:text="@string/btnCalcular" />
 
 </LinearLayout>

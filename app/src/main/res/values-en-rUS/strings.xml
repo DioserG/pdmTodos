@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">pdmAula3</string>
+    <string name="txtValorInicial">Price in U$ 1700,00</string>
+    <string name="textValorInicial">Initial Price</string>
+    <string name="textViewMensal">" Monthly Application"</string>
+    <string name="txtMensal">Example:100,00</string>
+    <string name="textViewTempoAplicacao">Application Time</string>
+    <string name="txtTempoAplicacao">Months</string>
+    <string name="textViewTaxa">Rate</string>
+    <string name="txtTaxa">Example: 0.02</string>
+    <string name="btnCalcular">Calculate</string>
+
+</resources>
