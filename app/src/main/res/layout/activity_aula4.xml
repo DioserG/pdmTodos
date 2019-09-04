@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".aula4">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Contatos"
+        android:onClick="lerContatosClick"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ContatosV2"
+        android:onClick="lerContatos2Click"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Web"
+        android:textAllCaps="false"
+        android:onClick="webClick"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Call"
+        android:textAllCaps="false"
+        android:onClick="callClick"/>
+
+    <Button
+        android:id="@+id/maps1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:onClick="maps1"
+        android:text="MAPS1"/>
+
+    <Button
+        android:id="@+id/maps2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:onClick="maps2"
+        android:text="MAPS2"/>
+
+    <Button
+        android:id="@+id/maps3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:onClick="maps3"
+        android:text="MAPS3"/>
+
+    <Button
+        android:id="@+id/pic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:onClick="pic"
+        android:text="PIC ITI"/>
+
+    <TextView
+        android:id="@+id/txtContato"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/contato"
+        android:textSize="25dp"
+        />
+
+    <TableRow
+        android:layout_width="94dp"
+        android:layout_height="27dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/txtNome"
+            android:layout_width="188dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:text="Nome:"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/txtTelefone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:text="Telefone:"
+            android:textSize="20dp" />
+    </TableRow>
+
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+</TableLayout>

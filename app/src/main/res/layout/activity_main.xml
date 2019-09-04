@@ -8,11 +8,41 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnAula1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aula1"
+        android:onClick="btnAula1"
+        android:layout_gravity="center"
+        tools:layout_editor_absoluteX="161dp"
+        tools:layout_editor_absoluteY="395dp" />
+
+    <Button
+        android:id="@+id/btnAula2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aula2"
+        android:onClick="btnAula2"
+        android:layout_gravity="center"
+        tools:layout_editor_absoluteX="161dp"
+        tools:layout_editor_absoluteY="395dp" />
+
+    <Button
+        android:id="@+id/btnAula3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Aula3"
         android:onClick="btnAula3"
+        android:layout_gravity="center"
+        tools:layout_editor_absoluteX="161dp"
+        tools:layout_editor_absoluteY="395dp" />
+
+    <Button
+        android:id="@+id/btnAula4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aula4"
+        android:onClick="btnAula4"
         android:layout_gravity="center"
         tools:layout_editor_absoluteX="161dp"
         tools:layout_editor_absoluteY="395dp" />

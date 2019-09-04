@@ -13,10 +13,27 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void btnAula3(View view) {
+    public void btnAula1(View view) {
+        Intent intent  = new Intent(MainActivity.this,
+                aula1.class);
+        startActivity(intent);
+    }
 
+    public void btnAula2(View view) {
+        Intent intent  = new Intent(MainActivity.this,
+                aula2.class);
+        startActivity(intent);
+    }
+
+    public void btnAula3(View view) {
         Intent intent  = new Intent(MainActivity.this,
                 Main2Activity.class);
+        startActivity(intent);
+    }
+
+    public void btnAula4(View view) {
+        Intent intent  = new Intent(MainActivity.this,
+                aula4.class);
         startActivity(intent);
     }
 }

@@ -10,5 +10,6 @@
     <string name="textViewTaxa">Rate</string>
     <string name="txtTaxa">Example: 0.02</string>
     <string name="btnCalcular">Calculate</string>
+    <string name="contato">Contact</string>
 
 </resources>
