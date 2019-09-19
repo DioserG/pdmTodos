@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -22,6 +23,17 @@ public class aula6 extends AppCompatActivity {
         super.onCreateOptionsMenu(menu);
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu,menu);
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()){
+            case R.id.lista_aula6:
+               // Toast.makeText(this, "Lista!", Toast.LENGTH_SHORT).show();
+                Intent intent  = new Intent(aula6.this, aula6_1.class);
+                startActivity(intent);
+                return true;
+        }
         return true;
     }
 
