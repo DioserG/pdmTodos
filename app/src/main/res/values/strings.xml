@@ -10,4 +10,5 @@
     <string name="txtTaxa">Ex: 0.02</string>
     <string name="btnCalcular">Calcular</string>
     <string name="contato"><u>Contato</u></string>
+    <string name="cat_str">Categoria</string>
 </resources>
