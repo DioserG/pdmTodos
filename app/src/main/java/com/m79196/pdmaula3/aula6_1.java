@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Arrays;
@@ -31,16 +32,14 @@ public class aula6_1 extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id){
 
-               //String item = listas[position];
-                // Toast.makeText(getApplicationContext(), item, Toast.LENGTH_SHORT).show();
+                TextView textview = (TextView) view;
+                String selecionado = (String) textview.getText();
 
-                Intent intent = new Intent(getApplicationContext(), /* activity a ser chamada */ aula6_2.class);
-                String item = (String) listas[position];
-                intent.putExtra("nome", item);
-                // Toast.makeText(getApplicationContext(), item, Toast.LENGTH_SHORT).show();
-                intent.putExtra("POSITION", position);
+                //Toast.makeText(getApplicationContext(),selecionado,Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(getApplicationContext(), aula6_2.class);
+                intent.putExtra("selecionado", selecionado);
                 startActivity(intent);
-
 
             }
         });

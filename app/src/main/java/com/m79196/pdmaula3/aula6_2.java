@@ -15,7 +15,7 @@ import java.util.Arrays;
 public class aula6_2 extends AppCompatActivity {
 
     private Spinner spinner_aula6_3;
-    private TextView texto1;
+    private TextView nomeSelecionado;
 
     String [] estados = {"RS","SC"};
     String [] cidade = {"Santa Cruz","Camburiú"};
@@ -25,7 +25,12 @@ public class aula6_2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aula6_2);
 
+
         spinner_aula6_3 = findViewById(R.id.spinner_estado_aula6_3);
+
+        Bundle extras = getIntent().getExtras();
+        nomeSelecionado = findViewById(R.id.textView_aula6_3);
+        nomeSelecionado.setText((String)extras.get("selecionado"));
 
         ArrayAdapter<String> adaptSpinnerEstado = new ArrayAdapter(this,
                 android.R.layout.simple_list_item_1, estados);
