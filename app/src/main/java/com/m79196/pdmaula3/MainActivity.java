@@ -42,4 +42,10 @@ public class MainActivity extends AppCompatActivity {
                 aula6.class);
         startActivity(intent);
     }
+
+    public void btnAula7(View view) {
+        Intent intent  = new Intent(MainActivity.this,
+                aula7.class);
+        startActivity(intent);
+    }
 }
