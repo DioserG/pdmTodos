@@ -24,18 +24,24 @@ class MeuAdpter extends SimpleAdapter {
         TextView tv1 = v.findViewById(R.id.nomeTime);
         TextView tv2 = v.findViewById(R.id.pontuacaoTime);
 
-        if (position == 0 ) {
+        if (position <= 5) {
             Log.d(tag, "passou por aqui");
             //tv1.setTextColor(Color.YELLOW);
             //tv2.setTextColor(Color.YELLOW);
             v.setBackgroundColor(Color.YELLOW);
-        }
-        else {
-            tv1.setTextColor(Color.CYAN);
-            tv2.setTextColor(Color.GREEN);
+        } else if (position >= 16) {
+            Log.d(tag, "passou por aqui");
+            //tv1.setTextColor(Color.YELLOW);
+            //tv2.setTextColor(Color.YELLOW);
             v.setBackgroundColor(Color.RED);
         }
-
+        else {
+            if(position %2 ==0){
+                v.setBackgroundColor(Color.GRAY);
+            }else{
+                v.setBackgroundColor(Color.WHITE);
+            }
+        }
         return v;
     }
 }
