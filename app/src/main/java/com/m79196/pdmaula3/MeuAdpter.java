@@ -36,7 +36,7 @@ class MeuAdpter extends SimpleAdapter {
             v.setBackgroundColor(Color.RED);
         }
         else {
-            if(position %2 ==0){
+            if(position %2 == 0){
                 v.setBackgroundColor(Color.GRAY);
             }else{
                 v.setBackgroundColor(Color.WHITE);
