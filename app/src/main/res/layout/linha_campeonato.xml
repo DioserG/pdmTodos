@@ -11,14 +11,16 @@
         android:id="@+id/escudoTime"
         app:srcCompat="@drawable/gre"
         android:layout_width="40dp"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"/>
 
     <TextView
         android:id="@+id/nomeTime"
         android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
-        android:textSize="30dp"/>
+        android:textSize="30dp"
+        android:layout_marginLeft="10dp"/>
 
     <TextView
         android:id="@+id/pontuacaoTime"
