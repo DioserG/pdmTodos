@@ -7,26 +7,43 @@
     android:orientation="vertical"
     tools:context=".aula7_2">
 
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:gravity="center_horizontal">
 
-        <TextView
-            android:id="@+id/nomeTimePosicao"
-            android:layout_width="82dp"
-            android:layout_height="wrap_content"
-            android:text="Posição: "
-            android:textAlignment="textEnd"
-            android:gravity="end"
-            android:textSize="20sp" />
+        <TableRow>
 
-        <TextView
-            android:id="@+id/posicao"
-            android:layout_width="110dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textColor="@color/black"
-            android:textSize="28sp" />
-    </TableRow>
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="Time: "
+                android:textSize="20sp"
+                android:layout_marginLeft="10dp"/>
+
+            <TextView
+                android:id="@+id/nomeTimes"
+                android:layout_width="319dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="28sp" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="Posição: "
+                android:textSize="20sp"
+                android:layout_marginLeft="10dp"/>
+
+            <TextView
+                android:id="@+id/posicao"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="28sp" />
+        </TableRow>
+
 </TableLayout>

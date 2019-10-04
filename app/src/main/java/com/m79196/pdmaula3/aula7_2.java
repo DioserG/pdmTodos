@@ -7,6 +7,7 @@ import android.widget.Toast;
 
 public class aula7_2 extends AppCompatActivity {
     private TextView posicaoSelecionado;
+    private TextView nomeSelecionado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,6 +15,9 @@ public class aula7_2 extends AppCompatActivity {
         setContentView(R.layout.activity_aula7_2);
 
         Bundle extras = getIntent().getExtras();
+        nomeSelecionado = findViewById(R.id.nomeTimes);
+        nomeSelecionado.setText((String)extras.get("time"));
+
         posicaoSelecionado = findViewById(R.id.posicao);
         posicaoSelecionado.setText((String)extras.get("posicao"));
     }

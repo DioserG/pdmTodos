@@ -3,6 +3,7 @@ package com.m79196.pdmaula3;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -18,7 +19,7 @@ import java.util.Map;
 public class aula7_1 extends AppCompatActivity {
 
     //String tag = "Log Dioser";
-    //Log.d(tag, "passou por aqui");
+   // Log.d(tag, "passou por aqui");
     private ListView listView;
     private List<Map<String,Object>> lista;
     SimpleAdapter adapter;
@@ -40,16 +41,14 @@ public class aula7_1 extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                //Map<String,Object> map = lista.get(i);
-
-               //Toast.makeText(getApplicationContext(), String.valueOf(i), Toast.LENGTH_SHORT).show();
-// -----------------
+                Map<String,Object> item = lista.get(i);
+                String time = (String) item.get("nomeTime");
+                //Toast.makeText(getApplicationContext(),time,Toast.LENGTH_SHORT).show();
 
                 String posicao = (String.valueOf(l+1));
-                Toast.makeText(getApplicationContext(), posicao, Toast.LENGTH_SHORT).show();
-
                 Intent intent = new Intent(getApplicationContext(), aula7_2.class);
                 intent.putExtra("posicao", posicao);
+                intent.putExtra("time", time);// manda o valor para aula7_2
                 startActivity(intent);
             }
         });
