@@ -42,14 +42,15 @@ public class aula7_1 extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 //Map<String,Object> map = lista.get(i);
 
-                Toast.makeText(getApplicationContext(), String.valueOf(l +1), Toast.LENGTH_SHORT).show();
+               //Toast.makeText(getApplicationContext(), String.valueOf(i), Toast.LENGTH_SHORT).show();
 // -----------------
-             //   TextView textview = (TextView) view;
-             //   String selecionado = (String) textview.getText();
 
-               // Intent intent = new Intent(getApplicationContext(), aula6_2.class);
-              //  intent.putExtra("listView", selecionado);
-                //startActivity(intent);
+                String posicao = (String.valueOf(l+1));
+                Toast.makeText(getApplicationContext(), posicao, Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(getApplicationContext(), aula7_2.class);
+                intent.putExtra("posicao", posicao);
+                startActivity(intent);
             }
         });
 
