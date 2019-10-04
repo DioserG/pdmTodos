@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,7 +20,7 @@ public class aula7_1 extends AppCompatActivity {
     //String tag = "Log Dioser";
     //Log.d(tag, "passou por aqui");
     private ListView listView;
-    private List<Map<String,String>> lista;
+    private List<Map<String,Object>> lista;
     SimpleAdapter adapter;
 
     String[] de = {"escudoTime", "nomeTime", "pontuacaoTime"};
@@ -38,21 +40,30 @@ public class aula7_1 extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Map<String,String> map = lista.get(i);
+                //Map<String,Object> map = lista.get(i);
+
+                Toast.makeText(getApplicationContext(), String.valueOf(l +1), Toast.LENGTH_SHORT).show();
+// -----------------
+             //   TextView textview = (TextView) view;
+             //   String selecionado = (String) textview.getText();
+
+               // Intent intent = new Intent(getApplicationContext(), aula6_2.class);
+              //  intent.putExtra("listView", selecionado);
+                //startActivity(intent);
             }
         });
 
         // motrando os times e pontuações
-        int[] img = {R.drawable.inter, R.drawable.sao, R.drawable.pal, R.drawable.fla, R.drawable.gre, R.drawable.cam, R.drawable.cru, R.drawable.san, R.drawable.flu, R.drawable.cor, R.drawable.ame, R.drawable.vit, R.drawable.bah, R.drawable.cap, R.drawable.bot, R.drawable.vas, R.drawable.spt, R.drawable.cea, R.drawable.cha, R.drawable.par};
-        String[] clubes = {"Grêmio", "São Paulo", "Palmeiras", "Flamengo", "Paraná Clube", "Atlético-MG", "Cruzeiro", "Santos", "Fluminense", "Corinthians", "América-MG", "Vitória", "Bahia", "Atlético-PR", "Botafogo", "Vasco", "Sport", "Ceará", "Chapecoense", "Internacional"};
+        int[] img = {R.drawable.gre, R.drawable.sao, R.drawable.pal, R.drawable.fla, R.drawable.par, R.drawable.cam, R.drawable.cru, R.drawable.san, R.drawable.flu, R.drawable.cor, R.drawable.ame, R.drawable.vit, R.drawable.bah, R.drawable.cap, R.drawable.bot, R.drawable.vas, R.drawable.spt, R.drawable.cea, R.drawable.cha, R.drawable.inter};
+        String[] clubes = {"Grêmio", "São Paulo", "Palmeiras", "Flamengo", "Paraná Clube", "Atlético-MG", "Cruzeiro", "Santos", "Fluminense", "Corinthians", "América-MG", "Vitória", "  Bahia  ", "Atlético-PR", "Botafogo", "Vasco", "Sport", "Ceará", "Chapecoense", "Internacional"};
         int[] pontos = {89, 49, 46, 44, 41, 38, 33, 31, 31, 30, 30, 29, 28, 27, 26, 24, 24, 24, 22, 16};
 
 
         for (int i = 0; i < img.length; i++) {
-            Map<String,String> itens = new HashMap<>();
-            itens.put("escudoTime", String.valueOf(img[i]));
+            Map<String,Object> itens = new HashMap<>();
+            itens.put("escudoTime", img[i]);
             itens.put("nomeTime", clubes[i]);
-            itens.put("pontuacaoTime", String.valueOf(pontos[i]));
+            itens.put("pontuacaoTime", pontos[i]);
             lista.add(itens);
         }
         adapter.notifyDataSetChanged();

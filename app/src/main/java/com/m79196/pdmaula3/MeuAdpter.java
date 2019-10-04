@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 class MeuAdpter extends SimpleAdapter {
-    public MeuAdpter(Context applicationContext, List<Map<String, String>> lista, int linha_campeonato, String[] de, int[] para) {
+    public MeuAdpter(Context applicationContext, List<Map<String, Object>> lista, int linha_campeonato, String[] de, int[] para) {
         super(applicationContext,lista,linha_campeonato, de, para);
     }
 
