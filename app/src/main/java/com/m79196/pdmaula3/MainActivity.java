@@ -48,4 +48,10 @@ public class MainActivity extends AppCompatActivity {
                 aula7.class);
         startActivity(intent);
     }
+
+    public void btnAula8(View view) {
+        Intent intent  = new Intent(MainActivity.this,
+                aula8.class);
+        startActivity(intent);
+    }
 }

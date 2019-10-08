@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".aula8">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txtMatricula"
+            android:layout_width="88dp"
+            android:layout_height="31dp"
+            android:layout_margin="8dp"
+            android:text="Matricula" />
+
+        <EditText
+            android:id="@+id/textMatriclula"
+            android:layout_width="306dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txtNome"
+            android:layout_width="88dp"
+            android:layout_height="31dp"
+            android:layout_margin="8dp"
+            android:text="Nome" />
+
+        <EditText
+            android:id="@+id/textNome"
+            android:layout_width="304dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txtEmail"
+            android:layout_width="86dp"
+            android:layout_height="31dp"
+            android:layout_margin="8dp"
+            android:text="E-mail" />
+
+        <EditText
+            android:id="@+id/textEmail"
+            android:layout_width="312dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txtEstado"
+            android:layout_width="78dp"
+            android:layout_height="31dp"
+            android:layout_margin="8dp"
+            android:text="Estado" />
+
+        <Spinner
+            android:id="@+id/sp_aula8_cidade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="250dp"
+            android:layout_marginTop="20dp"
+            android:gravity="end"
+            android:spinnerMode="dropdown"
+            android:textAlignment="viewEnd" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txtCidade"
+            android:layout_width="78dp"
+            android:layout_height="31dp"
+            android:layout_margin="8dp"
+            android:text="Cidade" />
+
+        <Spinner
+            android:id="@+id/sp_aula8_estado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="250dp"
+            android:layout_marginTop="20dp"
+            android:gravity="end"
+            android:spinnerMode="dropdown"
+            android:textAlignment="viewEnd" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/txtFoto"
+            android:layout_width="78dp"
+            android:layout_height="31dp"
+            android:layout_margin="8dp"
+            android:text="Foto"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/capturar"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:onClick="capturar"
+            android:text="Capturar"
+            android:layout_marginLeft="30dp"
+            android:layout_gravity="center"/>
+
+        <ImageView
+            android:id="@+id/Imagem"
+            android:layout_width="match_parent"
+            android:layout_height="99dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="253dp"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/adicionar"
+            android:layout_width="149dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="96dp"
+            android:onClick="adicionar"
+            android:text="Adicionar" />
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
