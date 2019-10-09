@@ -80,12 +80,10 @@
 
         <Spinner
             android:id="@+id/sp_aula8_estado"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="250dp"
-            android:layout_marginTop="20dp"
-            android:spinnerMode="dropdown"
-           />
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="22dp"
+            android:layout_marginTop="20dp" />
     </LinearLayout>
 
     <LinearLayout
