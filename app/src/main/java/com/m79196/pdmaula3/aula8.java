@@ -31,8 +31,14 @@ public class aula8 extends AppCompatActivity {
     private EditText textMatriclula;
     private EditText textNome;
     private EditText textEmail;
+    private List<Map<String,Object>> lista;
+    ListView listAula8;
+    SimpleAdapter adapter;
     private String[] estados = {"RS", "SC", "PR"};
     private String[] cidades = {"Santa Cruz do Sul", "Vera Cruz", "Rio Pardo", "Balneario Camboriú", "Joinville", "Floripa", "Curitiba", "Foz do Iguaçu", "Londrina"};
+
+    String[] de = {"matricula", "nome"};
+    int[] para = {R.id.imagem_aula8, R.id.matricula_aula8,R.id.nome_aula8};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +48,15 @@ public class aula8 extends AppCompatActivity {
         textMatriclula = findViewById(R.id.textMatriclula);
         textNome = findViewById(R.id.textNome);
         textEmail = findViewById(R.id.textEmail);
+
+        lista = new ArrayList<>();
+
+        listAula8 = findViewById(R.id.listAula8);
+
+        lista = new ArrayList<>();
+        adapter = new MeuAdpter(getApplicationContext(), lista, R.layout.linha_campeonato, de, para);
+
+        listAula8.setAdapter(adapter);
 
         Spinner est = (Spinner) findViewById(R.id.sp_aula8_estado);
         ArrayAdapter <String> adapter_est = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, estados);
@@ -83,6 +98,13 @@ public class aula8 extends AppCompatActivity {
 
         Toast.makeText(getApplicationContext(),m, Toast.LENGTH_SHORT).show();
         Toast.makeText(getApplicationContext(),n, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(),e, Toast.LENGTH_SHORT).show();
+
+        Map<String,Object> itens = new HashMap<>();
+        itens.put("matricula", m);
+        itens.put("nome", n);
+        lista.add(itens);
+        adapter.notifyDataSetChanged();
     }
 
 
