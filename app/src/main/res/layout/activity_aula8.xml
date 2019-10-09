@@ -133,8 +133,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
+        android:layout_height="wrap_content">
         <Button
             android:id="@+id/adicionar"
             android:layout_width="149dp"
@@ -144,7 +143,9 @@
             android:text="Adicionar" />
     </LinearLayout>
 
-
-
+    <ListView
+        android:id="@+id/listAula8"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </LinearLayout>
