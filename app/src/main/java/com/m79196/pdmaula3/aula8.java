@@ -49,20 +49,6 @@ public class aula8 extends AppCompatActivity {
         cid.setAdapter(adapter_cid);
 
 
-    //     listView = findViewById(R.id.listView);
-    //     lista = new ArrayList<>();
-    //    adapter = new MeuAdpter(getApplicationContext(), lista, R.layout.linha_campeonato, de, para);
-
-    //    listView.setAdapter(adapter);
-
-
-     //   for (int i = 0; i < img.length; i++) {
-     //       Map<String,Object> itens = new HashMap<>();
-     //       itens.put("escudoTime", img[i]);
-     //       itens.put("nomeTime", clubes[i]);
-     //       itens.put("pontuacaoTime", pontos[i]);
-     //       lista.add(itens);//  }
-     //   adapter.notifyDataSetChanged();
 
     }
 
@@ -89,9 +75,20 @@ public class aula8 extends AppCompatActivity {
     }
 
     public void adicionar(View view) {
+        listView = findViewById(R.id.listAula8);
+        lista = new ArrayList<>();
+
+        adapter = new MeuAdpter(getApplicationContext(), lista, R.layout.lista_aula8, de, para);
+
+        //    listView.setAdapter(adapter);
 
 
-
-
+        //   for (int i = 0; i < img.length; i++) {
+        //       Map<String,Object> itens = new HashMap<>();
+        //       itens.put("escudoTime", img[i]);
+        //       itens.put("nomeTime", clubes[i]);
+        //       itens.put("pontuacaoTime", pontos[i]);
+        //       lista.add(itens);//  }
+        //   adapter.notifyDataSetChanged();
     }
 }
