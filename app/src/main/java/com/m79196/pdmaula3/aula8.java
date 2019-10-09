@@ -29,6 +29,8 @@ import java.util.Map;
 public class aula8 extends AppCompatActivity {
 
     private EditText textMatriclula;
+    private EditText textNome;
+    private EditText textEmail;
     private String[] estados = {"RS", "SC", "PR"};
     private String[] cidades = {"Santa Cruz do Sul", "Vera Cruz", "Rio Pardo", "Balneario Camboriú", "Joinville", "Floripa", "Curitiba", "Foz do Iguaçu", "Londrina"};
 
@@ -38,6 +40,8 @@ public class aula8 extends AppCompatActivity {
         setContentView(R.layout.activity_aula8);
 
         textMatriclula = findViewById(R.id.textMatriclula);
+        textNome = findViewById(R.id.textNome);
+        textEmail = findViewById(R.id.textEmail);
 
         Spinner est = (Spinner) findViewById(R.id.sp_aula8_estado);
         ArrayAdapter <String> adapter_est = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, estados);
@@ -73,8 +77,12 @@ public class aula8 extends AppCompatActivity {
 
     @SuppressLint("WrongViewCast")
     public void adicionar(View view) {
-        String s = textMatriclula.getText().toString();
-        Toast.makeText(getApplicationContext(),s, Toast.LENGTH_SHORT).show();
+        String m = textMatriclula.getText().toString();
+        String n = textNome.getText().toString();
+        String e = textEmail.getText().toString();
+
+        Toast.makeText(getApplicationContext(),m, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(),n, Toast.LENGTH_SHORT).show();
     }
 
 
