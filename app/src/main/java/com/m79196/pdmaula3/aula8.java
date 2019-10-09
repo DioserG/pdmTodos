@@ -1,5 +1,6 @@
 package com.m79196.pdmaula3;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -11,11 +12,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -25,20 +28,16 @@ import java.util.Map;
 
 public class aula8 extends AppCompatActivity {
 
+    private EditText textMatriclula;
     private String[] estados = {"RS", "SC", "PR"};
     private String[] cidades = {"Santa Cruz do Sul", "Vera Cruz", "Rio Pardo", "Balneario Camboriú", "Joinville", "Floripa", "Curitiba", "Foz do Iguaçu", "Londrina"};
-
-    String[] de = {"ImagemAula8", "matricula", "nome"};
-    int[] para = {R.id.ImagemAula8, R.id.matricula, R.id.nome};
-
-    private ListView listView;
-    private List<Map<String,Object>> lista;
-    SimpleAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aula8);
+
+        textMatriclula = findViewById(R.id.textMatriclula);
 
         Spinner est = (Spinner) findViewById(R.id.sp_aula8_estado);
         ArrayAdapter <String> adapter_est = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, estados);
@@ -47,8 +46,6 @@ public class aula8 extends AppCompatActivity {
         Spinner cid = (Spinner) findViewById(R.id.sp_aula8_cidade);
         ArrayAdapter <String> adapter_cid = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, cidades);
         cid.setAdapter(adapter_cid);
-
-
 
     }
 
@@ -74,21 +71,11 @@ public class aula8 extends AppCompatActivity {
         startActivityForResult(it,123);
     }
 
+    @SuppressLint("WrongViewCast")
     public void adicionar(View view) {
-        listView = findViewById(R.id.listAula8);
-        lista = new ArrayList<>();
-
-        adapter = new MeuAdpter(getApplicationContext(), lista, R.layout.lista_aula8, de, para);
-
-        //    listView.setAdapter(adapter);
-
-
-        //   for (int i = 0; i < img.length; i++) {
-        //       Map<String,Object> itens = new HashMap<>();
-        //       itens.put("escudoTime", img[i]);
-        //       itens.put("nomeTime", clubes[i]);
-        //       itens.put("pontuacaoTime", pontos[i]);
-        //       lista.add(itens);//  }
-        //   adapter.notifyDataSetChanged();
+        String s = textMatriclula.getText().toString();
+        Toast.makeText(getApplicationContext(),s, Toast.LENGTH_SHORT).show();
     }
+
+
 }

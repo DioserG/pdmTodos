@@ -48,16 +48,13 @@ public class aula6_2 extends AppCompatActivity {
                 // Colocando valor na listView
                 lv_cidade = findViewById(R.id.lv_aula6_2_cidade);
                 if(estadosSelecionados == "RS"){
-                    ArrayAdapter<String> adaptListCidade = new ArrayAdapter(getApplicationContext(),
-                            android.R.layout.simple_list_item_1, Arrays.asList(cidadeRS));
+                    final  ArrayAdapter<String> adaptListCidade = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_list_item_1, Arrays.asList(cidadeRS));
                             lv_cidade.setAdapter(adaptListCidade);
                 }else if (estadosSelecionados == "SC"){
-                    ArrayAdapter<String> adaptListCidade = new ArrayAdapter(getApplicationContext(),
-                            android.R.layout.simple_list_item_1, Arrays.asList(cidadeSC));
+                    final  ArrayAdapter<String> adaptListCidade = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_list_item_1, Arrays.asList(cidadeSC));
                             lv_cidade.setAdapter(adaptListCidade);
                 }else if (estadosSelecionados == "PR"){
-                    ArrayAdapter<String> adaptListCidade = new ArrayAdapter(getApplicationContext(),
-                            android.R.layout.simple_list_item_1, Arrays.asList(cidadePR));
+                    final  ArrayAdapter<String> adaptListCidade = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_list_item_1, Arrays.asList(cidadePR));
                             lv_cidade.setAdapter(adaptListCidade);
                 }
             }

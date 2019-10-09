@@ -30,6 +30,6 @@
     <ListView
         android:id="@+id/lv_aula6_2_cidade"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
+        android:layout_height="wrap_content"
+        android:background="@color/cinza_placa" />
 </LinearLayout>
