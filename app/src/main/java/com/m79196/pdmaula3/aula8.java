@@ -96,15 +96,20 @@ public class aula8 extends AppCompatActivity {
         String n = textNome.getText().toString();
         String e = textEmail.getText().toString();
 
-        Toast.makeText(getApplicationContext(),m, Toast.LENGTH_SHORT).show();
-        Toast.makeText(getApplicationContext(),n, Toast.LENGTH_SHORT).show();
-        Toast.makeText(getApplicationContext(),e, Toast.LENGTH_SHORT).show();
+         //   Toast.makeText(getApplicationContext(),m, Toast.LENGTH_SHORT).show();
+        //  Toast.makeText(getApplicationContext(),n, Toast.LENGTH_SHORT).show();
+      //  Toast.makeText(getApplicationContext(),e, Toast.LENGTH_SHORT).show();
+        ListView lista = (ListView) findViewById(R.id.listAula8);
+        String[] strings = new String[] { n, m,e};
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,strings);
 
-        Map<String,Object> itens = new HashMap<>();
-        itens.put("matricula", m);
-        itens.put("nome", n);
-        lista.add(itens);
-        adapter.notifyDataSetChanged();
+        // Map<String,Object> itens = new HashMap<>();
+        // itens.put("matricula", m);
+       //  itens.put("nome", n);
+       //  adapter.add(itens);
+       //  adapter.notifyDataSetChanged();
+
+        //lista.setAdapter(adapter);
     }
 
 
