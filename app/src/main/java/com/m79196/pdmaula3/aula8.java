@@ -21,21 +21,19 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 
 public class aula8 extends AppCompatActivity {
-
-    private EditText textMatriclula;
-    private EditText textNome;
-    private EditText textEmail;
+    private EditText textMatriclula, textNome, textEmail;
     private List<Map<String,Object>> lista;
+    private String[] estados = {"RS", "SC", "PR"};
+    private String[] cidades;
     ListView listAula8;
     SimpleAdapter adapter;
-    private String[] estados = {"RS", "SC", "PR"};
-    private String[] cidades = {"Santa Cruz do Sul", "Vera Cruz", "Rio Pardo", "Balneario Camboriú", "Joinville", "Floripa", "Curitiba", "Foz do Iguaçu", "Londrina"};
 
     String[] de = {"matricula", "nome"};
     int[] para = {R.id.imagem_aula8, R.id.matricula_aula8,R.id.nome_aula8};
@@ -49,12 +47,9 @@ public class aula8 extends AppCompatActivity {
         textNome = findViewById(R.id.textNome);
         textEmail = findViewById(R.id.textEmail);
 
-        lista = new ArrayList<>();
-
         listAula8 = findViewById(R.id.listAula8);
-
         lista = new ArrayList<>();
-        adapter = new MeuAdpter(getApplicationContext(), lista, R.layout.linha_campeonato, de, para);
+        adapter = new MeuAdpter(getApplicationContext(), lista, R.layout.list_aula8, de, para);
 
         listAula8.setAdapter(adapter);
 
@@ -62,9 +57,38 @@ public class aula8 extends AppCompatActivity {
         ArrayAdapter <String> adapter_est = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, estados);
         est.setAdapter(adapter_est);
 
-        Spinner cid = (Spinner) findViewById(R.id.sp_aula8_cidade);
-        ArrayAdapter <String> adapter_cid = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, cidades);
-        cid.setAdapter(adapter_cid);
+        final Spinner cid = (Spinner) findViewById(R.id.sp_aula8_cidade);
+       // ArrayAdapter <String> adapter_cid = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, cidades);
+      // cid.setAdapter(adapter_cid);
+
+        // inicio
+        est.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
+                String estadosSelecionados = estados[position];
+
+                // Colocando no spinner
+                if (estadosSelecionados == "RS"){
+                    cidades = new String[] {"Santa Cruz do Sul", "Vera Cruz", "Rio Pardo"};
+                    ArrayAdapter<String> adaptListCidade = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, Arrays.asList(cidades));
+                    cid.setAdapter(adaptListCidade);
+                }else if (estadosSelecionados == "SC"){
+                    cidades = new String[] {"Balneario Camboriú","Joinville", "Floripa"};
+                    ArrayAdapter<String> adaptListCidade = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, Arrays.asList(cidades));
+                    cid.setAdapter(adaptListCidade);
+                }else {
+                    cidades = new String[] {"Curitiba", "Foz do Iguaçu", "Londrina"};
+                    ArrayAdapter<String> adaptListCidade = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, Arrays.asList(cidades));
+                    cid.setAdapter(adaptListCidade);
+                }
+         // Fim
+
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+            }
+        });
+
 
     }
 
@@ -109,8 +133,6 @@ public class aula8 extends AppCompatActivity {
        //  adapter.add(itens);
        //  adapter.notifyDataSetChanged();
 
-        //lista.setAdapter(adapter);
+        lista.setAdapter(adapter);
     }
-
-
 }
