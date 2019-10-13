@@ -4,11 +4,14 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.provider.ContactsContract;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -28,68 +31,115 @@ import java.util.Map;
 
 
 public class aula8 extends AppCompatActivity {
-    private EditText textMatriclula, textNome, textEmail;
-    private List<Map<String,Object>> lista;
-    private String[] estados = {"RS", "SC", "PR"};
-    private String[] cidades;
-    ListView listAula8;
-    SimpleAdapter adapter;
 
-    String[] de = {"matricula", "nome"};
+    String tag = "Log Dioser";
+    private ListView lv;
+    List<HashMap<String, Object>> lista;
+    AdaptadorDesafio adapter_desafio;
+
+    String[] de = {"foto", "matricula", "nome"};
     int[] para = {R.id.imagem_aula8, R.id.matricula_aula8,R.id.nome_aula8};
+
+    private String[] estados = {"Rio Grande do Sul", "Santa Catarina", "Paraná"};
+    private String[] cidades;
+
+    private TextView textMatriclula;
+    private TextView textNome;
+    private TextView textEmail;
+    private Spinner est;
+    private Spinner cid;
+
+    private String estadoSelecionado;
+    private String cidadeSelecionada;
+
+
+    HashMap<String, Object> item;
+
+    Bitmap bm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_aula8);
+        setContentView(R.layout.activity_main);
 
         textMatriclula = findViewById(R.id.textMatriclula);
         textNome = findViewById(R.id.textNome);
         textEmail = findViewById(R.id.textEmail);
+        est = (Spinner) findViewById(R.id.sp_aula8_estado);
+        cid = (Spinner) findViewById(R.id.sp_aula8_cidade);
 
-        listAula8 = findViewById(R.id.listAula8);
+        //codigo list view
+        lv = findViewById(R.id.listAula8);
         lista = new ArrayList<>();
-        adapter = new MeuAdpter(getApplicationContext(), lista, R.layout.list_aula8, de, para);
+        //adapter_desafio = new AdaptadorDesafio(getApplicationContext(), lista, R.layout.linha_desafio, de, para);
+        //lv.setAdapter(adapter_desafio);
 
-        listAula8.setAdapter(adapter);
-
-        Spinner est = (Spinner) findViewById(R.id.sp_aula8_estado);
-        ArrayAdapter <String> adapter_est = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, estados);
+        //codigo spinner estados
+        ArrayAdapter<String> adapter_est = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, estados);
         est.setAdapter(adapter_est);
 
-        final Spinner cid = (Spinner) findViewById(R.id.sp_aula8_cidade);
-       // ArrayAdapter <String> adapter_cid = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, cidades);
-      // cid.setAdapter(adapter_cid);
-
-        // inicio
+        //codigo spinner cidades
         est.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
-                String estadosSelecionados = estados[position];
-
-                // Colocando no spinner
-                if (estadosSelecionados == "RS"){
-                    cidades = new String[] {"Santa Cruz do Sul", "Vera Cruz", "Rio Pardo"};
-                    ArrayAdapter<String> adaptListCidade = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, Arrays.asList(cidades));
-                    cid.setAdapter(adaptListCidade);
-                }else if (estadosSelecionados == "SC"){
-                    cidades = new String[] {"Balneario Camboriú","Joinville", "Floripa"};
-                    ArrayAdapter<String> adaptListCidade = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, Arrays.asList(cidades));
-                    cid.setAdapter(adaptListCidade);
-                }else {
-                    cidades = new String[] {"Curitiba", "Foz do Iguaçu", "Londrina"};
-                    ArrayAdapter<String> adaptListCidade = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, Arrays.asList(cidades));
-                    cid.setAdapter(adaptListCidade);
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                estadoSelecionado = estados[position];
+                if (estadoSelecionado == "Rio Grande do Sul") {
+                    cidades = new String[]{"Santa Cruz do Sul", "Porto Alegre", "Erechim"};
+                    ArrayAdapter<String> adapter_cid = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, cidades);
+                    cid.setAdapter(adapter_cid);
+                } else if (estadoSelecionado == "Santa Catarina") {
+                    cidades = new String[]{"Florianópolis", "Balneário Camboriú", "Joinville"};
+                    ArrayAdapter<String> adapter_cid = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, cidades);
+                    cid.setAdapter(adapter_cid);
+                } else if (estadoSelecionado == "Paraná") {
+                    cidades = new String[]{"Curitiba", "Foz do Iguaçu", "Londrina"};
+                    ArrayAdapter<String> adapter_cid = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, cidades);
+                    cid.setAdapter(adapter_cid);
                 }
-         // Fim
-
             }
+
             @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
+            public void onNothingSelected(AdapterView<?> parent) {
+                //...
             }
         });
 
+        cid.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                cidadeSelecionada = cidades[position];
+            }
 
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                //...
+            }
+        });
+
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Map<String,Object> item = lista.get(position);
+                String matricula = (String) item.get("matricula");
+                String nome = (String) item.get("nome");
+                String email = (String) item.get("email");
+                String estado = (String) item.get("estado");
+                String cidade = (String) item.get("cidade");
+                Intent intent = new Intent(getApplicationContext(), aula8_1.class);
+                intent.putExtra("matricula", matricula);
+                intent.putExtra("nome", nome);
+                intent.putExtra("email", email);
+                intent.putExtra("estado", estado);
+                intent.putExtra("cidade", cidade);
+                startActivity(intent);
+            }
+        });
+
+    }
+
+    public void tirarFoto(View view) {
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(intent, 123);
     }
 
     @Override
@@ -109,30 +159,43 @@ public class aula8 extends AppCompatActivity {
         }
     }
 
-    public void capturar(View view) {
-        Intent it = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        startActivityForResult(it,123);
+    public void inserirItem(View view) {
+
+        //item = new HashMap<String, Object>();
+        final Map<String,Object> item = new HashMap<>();
+
+        ImageView iv = (ImageView) findViewById(R.id.imagem_aula8);
+        //recupero o Drawable da ImageView
+        Drawable drawable = iv.getDrawable();
+        //faço o casting de Drawable para BitmapDrawable
+        BitmapDrawable bd = (BitmapDrawable) drawable;
+        //recupero o Bitmap do BitmapDrawable
+        Bitmap bitmap = bd.getBitmap();
+        //adiciono o Bitmap na variável itens
+        item.put("foto", bitmap);
+
+        //EditText textNome = (EditText) findViewById(R.id.nomeAluno);
+        //String n = textNome.getText().toString();
+        item.put("nome", textNome.getText().toString());
+        Log.d(tag,"valor nome: "+ textNome.getText().toString());
+
+        //EditText textMatriclula = (EditText) findViewById(R.id.matriculaAluno);
+        item.put("matricula", textMatriclula.getText().toString());
+        Log.d(tag,"valor matrícula: "+ textMatriclula.getText().toString());
+
+        item.put("email", textEmail.getText().toString());
+        Log.d(tag,"valor email: "+ textEmail.getText().toString());
+
+        item.put("estado", estadoSelecionado);
+        item.put("cidade", cidadeSelecionada);
+
+
+
+        lista.add((HashMap<String, Object>) item);
+
+        adapter_desafio = new AdaptadorDesafio(getApplicationContext(), lista, R.layout.list_aula8, de, para);
+        lv.setAdapter(adapter_desafio);
+
     }
 
-    @SuppressLint("WrongViewCast")
-    public void adicionar(View view) {
-        String m = textMatriclula.getText().toString();
-        String n = textNome.getText().toString();
-        String e = textEmail.getText().toString();
-
-         //   Toast.makeText(getApplicationContext(),m, Toast.LENGTH_SHORT).show();
-        //  Toast.makeText(getApplicationContext(),n, Toast.LENGTH_SHORT).show();
-      //  Toast.makeText(getApplicationContext(),e, Toast.LENGTH_SHORT).show();
-        ListView lista = (ListView) findViewById(R.id.listAula8);
-        String[] strings = new String[] { n, m,e};
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,strings);
-
-        // Map<String,Object> itens = new HashMap<>();
-        // itens.put("matricula", m);
-       //  itens.put("nome", n);
-       //  adapter.add(itens);
-       //  adapter.notifyDataSetChanged();
-
-        lista.setAdapter(adapter);
-    }
 }

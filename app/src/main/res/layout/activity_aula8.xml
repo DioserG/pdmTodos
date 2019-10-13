@@ -141,7 +141,7 @@
             android:layout_width="149dp"
             android:layout_height="40dp"
             android:layout_marginLeft="96dp"
-            android:onClick="adicionar"
+            android:onClick="inserirItem"
             android:text="Adicionar" />
     </LinearLayout>
 
