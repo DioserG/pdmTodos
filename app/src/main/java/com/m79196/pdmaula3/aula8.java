@@ -9,6 +9,7 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.provider.ContactsContract;
 import android.provider.MediaStore;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -38,7 +39,7 @@ public class aula8 extends AppCompatActivity {
     AdaptadorDesafio adapter_desafio;
 
     String[] de = {"foto", "matricula", "nome"};
-    int[] para = {R.id.imagem_aula8, R.id.matricula_aula8,R.id.nome_aula8};
+    int[] para = {R.id.foto_lista, R.id.matricula_lista, R.id.nome_lista};
 
     private String[] estados = {"Rio Grande do Sul", "Santa Catarina", "Paraná"};
     private String[] cidades;
@@ -60,22 +61,22 @@ public class aula8 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_aula8);
 
-        textMatriclula = findViewById(R.id.textMatriclula);
-        textNome = findViewById(R.id.textNome);
-        textEmail = findViewById(R.id.textEmail);
-        est = (Spinner) findViewById(R.id.sp_aula8_estado);
-        cid = (Spinner) findViewById(R.id.sp_aula8_cidade);
+        textMatriclula = findViewById(R.id.matriculaAluno);
+        textNome = findViewById(R.id.nomeAluno);
+        textEmail = findViewById(R.id.emailAluno);
+        est = (Spinner) findViewById(R.id.spnEstados);
+        cid = (Spinner) findViewById(R.id.spnCidades);
 
         //codigo list view
-        lv = findViewById(R.id.listAula8);
+        lv = findViewById(R.id.list_view);
         lista = new ArrayList<>();
         //adapter_desafio = new AdaptadorDesafio(getApplicationContext(), lista, R.layout.linha_desafio, de, para);
         //lv.setAdapter(adapter_desafio);
 
         //codigo spinner estados
-        ArrayAdapter<String> adapter_est = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, estados);
+        ArrayAdapter<String> adapter_est = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, estados);
         est.setAdapter(adapter_est);
 
         //codigo spinner cidades
@@ -142,21 +143,21 @@ public class aula8 extends AppCompatActivity {
         startActivityForResult(intent, 123);
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 123 && resultCode == RESULT_OK) {
 
-            //retorno da camera
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if (requestCode == 123 && resultCode == RESULT_OK) {
             super.onActivityResult(requestCode, resultCode, data);
-            Bitmap bm;
-            ImageView imagem  = (ImageView) findViewById(R.id.imagem);
-            if (requestCode == 123 & resultCode == RESULT_OK) {
+
+            ImageView iv = (ImageView) findViewById(R.id.foto);
+
+            if (requestCode == 123 && resultCode == RESULT_OK) {
                 bm = (Bitmap) data.getExtras().get("data");
-                imagem.setImageBitmap(bm);
-                imagem.setScaleType(ImageView.ScaleType.FIT_XY);
+                iv.setImageBitmap(bm);
+                iv.setScaleType(ImageView.ScaleType.FIT_XY);
             }
         }
+
     }
 
     public void inserirItem(View view) {
@@ -164,7 +165,7 @@ public class aula8 extends AppCompatActivity {
         //item = new HashMap<String, Object>();
         final Map<String,Object> item = new HashMap<>();
 
-        ImageView iv = (ImageView) findViewById(R.id.imagem_aula8);
+        ImageView iv = (ImageView) findViewById(R.id.foto);
         //recupero o Drawable da ImageView
         Drawable drawable = iv.getDrawable();
         //faço o casting de Drawable para BitmapDrawable

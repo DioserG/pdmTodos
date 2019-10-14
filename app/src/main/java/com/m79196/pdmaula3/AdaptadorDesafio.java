@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-class AdaptadorDesafio extends SimpleAdapter {
+public class AdaptadorDesafio extends SimpleAdapter {
 
     List<HashMap<String, Object>> lista;
 
@@ -32,14 +32,14 @@ class AdaptadorDesafio extends SimpleAdapter {
         String nome = (String) mapa.get("nome");
         String matr = (String) mapa.get("matricula");
 
-        ImageView iv = v.findViewById(R.id.imagem_aula8);
+        ImageView iv = v.findViewById(R.id.foto_lista);
         iv.setImageBitmap(bmp);
 
-        TextView tv1 = v.findViewById(R.id.nome_aula8);
+        TextView tv1 = v.findViewById(R.id.nome_lista);
         //Log.d(tag,"setar nome "+ tv1.getText());
         tv1.setText("Nome: "+nome);
 
-        TextView tv2 = v.findViewById(R.id.matricula_aula8);
+        TextView tv2 = v.findViewById(R.id.matricula_lista);
         //Log.d(tag,"setar matricula "+ tv2.getText());
         tv2.setText("Matrícula: " + matr);
 
