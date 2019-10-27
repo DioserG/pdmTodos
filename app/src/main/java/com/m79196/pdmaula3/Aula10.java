@@ -1,34 +1,34 @@
 package com.m79196.pdmaula3;
 
-import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
-import android.widget.SimpleAdapter;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.loopj.android.http.*;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import cz.msebera.android.httpclient.Header;
-
-import java.security.spec.ECField;
+import java.io.File;
+import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import cz.msebera.android.httpclient.Header;
 
 public class Aula10 extends AppCompatActivity {
 
     private ListView listView;
     private List<Map<String,Object>> lista;
-    private MeuAdpter adapter;
+    private AdaptadorAula10 adapter;
     private String[] de = {"temperatura", "humidade", "pressao_atm", "data_hora"};
     private int[] para = {R.id.txTemperatura, R.id.txHumidade, R.id.txPressao, R.id.txData_Hora};
 
@@ -42,45 +42,58 @@ public class Aula10 extends AppCompatActivity {
 
         listView = findViewById(R.id.list_view_aula10);
         lista = new ArrayList<>();
-        adapter = new MeuAdpter(getApplicationContext(), lista, R.layout.linha_clima, de, para);
-        listView.setAdapter(adapter);
-
-      /*  JSONObject res = new JSONObject(result);
-        JSONArray array = res.getJSONArray("weather");
-        for (int i = 0; i < array.length();i++){
-            JSONObject json = array.getJSONObject(i);
-            String temperatura = json.get("temperatura").toString();
-            String humidade = json.get("humidade").toString();
-            String pressao = json.get("pressao_atm").toString();
-            String data_hora = json.get("data_hora").toString();
-        }*/
-
-
         // código a seguir rereferente ao loopj
+
         String url = "http://ghelfer.net/la/weather.json";
-        RequestParams params = new RequestParams();
-        params.add("weather","1");
 
         AsyncHttpClient client = new AsyncHttpClient();
-        client.post(url, params, new AsyncHttpResponseHandler() {
+        client.get(url, new AsyncHttpResponseHandler() {
             @Override
-            public void onSuccess(int statusCode, Header[] headers, byte[] response) {
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                Toast.makeText(getApplicationContext(), "sucesso", Toast.LENGTH_LONG).show();
                 try {
-                    String data = new String(response, "UTF-8");
-                   // res.setText(data);
+                    String data = new String(responseBody, "UTF-8");
+
+                    JSONObject res = new JSONObject(data);
+                    JSONArray array = res.getJSONArray("weather");
+                    /*for (int i = 0; i < array.length(); i++) {
+                        JSONObject json = array.getJSONObject(i);
+                        String temperatura = json.get("temperature").toString();
+                        String humidade = json.get("humidity").toString();
+                        String pressao = json.get("pressure").toString();
+                        String data_hora = json.get("datetime").toString();
+                    }*/
+                    for (int i = 0; i < array.length(); i++) {
+                        Map<String,Object> itens = new HashMap<>();
+
+                        JSONObject json = array.getJSONObject(i);
+
+                        itens.put("temperatura", "Temperatura: " + json.get("temperature").toString());
+                        itens.put("humidade", "Humidade: " + json.get("humidity").toString());
+                        itens.put("pressao_atm", "Pressão Atm: " + json.get("pressure").toString());
+                        itens.put("data_hora", "Data/Hora: " + json.get("datetime").toString());
+                        lista.add(itens);
+                    }
+
+                    adapter = new AdaptadorAula10(getApplicationContext(), lista, R.layout.linha_clima, de, para);
+                    listView.setAdapter(adapter);
+
+                    //Toast.makeText(getApplicationContext(), array.getJSONObject(3).getString("temperature"), Toast.LENGTH_LONG).show();
+
+
 
                 }catch (Exception ex){
                     Log.e("URL", ex.getMessage());
                 };
-            }
+            };
 
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                    Log.e("URL", error.toString());
+                error.printStackTrace();
             }
         });
 
 
-
     }
 }
+
