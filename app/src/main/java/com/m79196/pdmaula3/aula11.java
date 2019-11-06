@@ -19,9 +19,9 @@ import java.util.Map;
 
 public class aula11 extends AppCompatActivity {
 
-    private EditText ano = (EditText) findViewById(R.id.ano);
+    private EditText ano;
     private DatabaseHelper helper;
-    private ListView lista = (ListView) findViewById(R.id.lista_carros);
+    private ListView lista;
     List<Map<String, Object>> carros;
     String[] de = {"id", "modelo", "ano", "valor"};
     int[] para = {R.id.textViewId, R.id.textViewModelo, R.id.textViewAno, R.id.textViewValor};
@@ -32,8 +32,8 @@ public class aula11 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aula11);
 
-       // ano  = (EditText) findViewById(R.id.ano);
-       // lista = (ListView) findViewById(R.id.lista_carros);
+        lista = (ListView) findViewById(R.id.lista_carros);
+        ano = (EditText) findViewById(R.id.ano);
         helper = new DatabaseHelper(this);
 
         lista.setClickable(true);
@@ -91,8 +91,7 @@ public class aula11 extends AppCompatActivity {
 
 
     public void adicionar(View view) {
-        Intent intent  = new Intent(aula11.this,
-                aula11_1.class);
+        Intent intent  = new Intent(aula11.this, aula11_1.class);
         startActivity(intent);
     }
 }
