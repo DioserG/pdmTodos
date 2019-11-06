@@ -1,5 +1,7 @@
 package com.m79196.pdmaula3;
 
+import android.content.ContentValues;
+import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
@@ -55,5 +57,19 @@ public class aula11_2 extends AppCompatActivity {
     }
 
     public void atualizar_aula11_2(View view) {
-    }
-}
+        SQLiteDatabase db = helper.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put("modelo", modelo.getText().toString());
+        values.put("ano",Integer.parseInt(ano.getText().toString()));
+        values.put("valor", Double.parseDouble(valor.getText().toString()));
+
+        String where [] = new String[]{idDados};
+        long resultado = db.update("carro", values, "id = ?", where);
+      if (resultado != -1){
+            Toast.makeText(this,"Registro atualizados com sucesso!", Toast.LENGTH_SHORT).show();
+            super.onBackPressed();
+      }else {
+        Toast.makeText(this,"Registro atualizados com sucesso!", Toast.LENGTH_SHORT).show();
+        }
+}}

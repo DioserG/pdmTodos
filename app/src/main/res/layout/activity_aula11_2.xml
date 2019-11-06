@@ -89,7 +89,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="atualizar_aula11_2"
-            android:text="Excluir" />
+            android:text="Atualizar" />
     </LinearLayout>
 
 </LinearLayout>
