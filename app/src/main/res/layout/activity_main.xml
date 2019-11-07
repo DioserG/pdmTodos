@@ -47,6 +47,12 @@
         tools:layout_editor_absoluteX="161dp"
         tools:layout_editor_absoluteY="395dp" />
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="--- Aula 5 enviado Virtual ---" />
+
     <Button
         android:id="@+id/btnAula6"
         android:layout_width="wrap_content"
@@ -76,6 +82,12 @@
         android:layout_gravity="center"
         tools:layout_editor_absoluteX="161dp"
         tools:layout_editor_absoluteY="395dp" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="--- Aula 9 trabalho prova ---" />
 
     <Button
         android:id="@+id/btnAula10"
