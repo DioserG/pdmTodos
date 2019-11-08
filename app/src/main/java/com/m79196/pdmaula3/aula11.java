@@ -81,7 +81,7 @@ public class aula11 extends AppCompatActivity {
                   item.put("ano", ano);
                   item.put("valor", String.format("R$ %.2f", valor));
                   carros.add(item);
-                  cursor.moveToNext();
+
               }while (cursor.moveToNext());}
 
       //  }
